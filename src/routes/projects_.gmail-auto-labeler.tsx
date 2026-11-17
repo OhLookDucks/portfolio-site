@@ -26,10 +26,9 @@ function GmailAutoLabelerPage() {
       howIntro="The pipeline runs on mail I already receive — no new inbox rules to maintain by hand:"
       steps={[
         "`Gmail filters` catch the incoming mail: application confirmations, replies, assessment invites.",
-        "A `browser extension` passes the details along to the script side.",
-        "`Apps Script` writes the row into the tracker sheet automatically — date, company, role, platform, posting link, status.",
-        "Every 10 minutes, a content scanner labels new mail into `Jobs/Rejected`, `Jobs/Interview`, `Jobs/Assessment` and `Jobs/Offer` — by the phrases in the email, not by hand.",
-        "Statuses move themselves: a rejection flips the row to `Rejected` with an `Auto: Rejected (date)` note, an invite moves it to `Interviewing` — and a status never moves backwards.",
+        "An `Apps Script` bound to the tracker sheet reads the filtered mail and writes the row automatically — date, company, role, platform, posting link, status.",
+        "Every 10 minutes, a content scanner labels new mail into `Jobs/Requirements`, `Jobs/Rejected`, `Jobs/Interview`, `Jobs/Assessment` and `Jobs/Offer` — by the phrases in the email, not by hand.",
+        "Statuses move themselves: a requirements request flips the row to `Requirements Needed`, a rejection to `Rejected` with an `Auto: Rejected (date)` note, an invite to `Interviewing` — and a status never moves backwards.",
       ]}
       afterSteps="Simple rules run the pipeline; AI is next for the messages the rules miss."
       terminal={{
@@ -45,7 +44,7 @@ function GmailAutoLabelerPage() {
           {
             prompt: "$ the pipeline",
             lines: [
-              { text: "Gmail filters → extension → Apps Script → Sheet" },
+              { text: "Gmail filters → Apps Script → Sheet" },
               { text: "content scan → Jobs/<status> label → status update" },
             ],
           },
