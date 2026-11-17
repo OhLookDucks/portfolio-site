@@ -1,10 +1,13 @@
 # Progress
 
 ## Now
-Portfolio is LIVE on Netlify: https://johnmark-ong-portfolio.netlify.app (the existing static `index.html`, deployed manually via the CLI — no build yet). The repo is linked locally (`.netlify/state.json`, gitignored) and `.gitignore` was added. Next: Phase 0 in `docs/plan.md`.
+Phase 0 complete and reviewed. Live site: https://johnmark-ong-portfolio.netlify.app (static deploy, no build yet). Inventory in `docs/architecture.md` section A, confirmed by owner. Node v24.22.3 installed via nvm and default-aliased (verified in a fresh shell — old open terminals need `nvm use 24` or a restart). `.nvmrc` contains `24`. Owner decisions recorded: Cebu stays, Atlassian Rovo stays.
 
 ## Next action
-Human: check the live link at phone and desktop width, then confirm so the `.gitignore` change can be committed. After that: finish `docs/setup-wsl.md` and paste `FIRST-PROMPT.txt` to start the TanStack Start migration.
+Phase 0 committed. Start **Phase 1**: move old site into `legacy/`, scaffold TanStack Start + shadcn/ui (see ADR 0002 for chosen route), add one shadcn Button to the home page as a test, fill in versions in `docs/tech-stack.md` and scripts in AGENTS.md. Checkpoint: `npm run dev` shows the starter page with a shadcn button; `npm run build` passes. Note: run node/npm commands with Node 24 (`nvm use 24`) — non-interactive shells still see v22.
+
+## Blocked / open questions
+- (none)
 
 ## Blocked / open questions
 - (none)
