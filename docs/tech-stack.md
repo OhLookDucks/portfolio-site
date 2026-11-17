@@ -13,8 +13,20 @@
 | Netlify integration | `@netlify/vite-plugin-tanstack-start` | Added to `vite.config.ts` |
 | Source control | Git + GitHub (`OhLookDucks/portfolio-site`) | Branch `tanstack-migration` |
 
-## Exact versions
-TO BE FILLED IN during Phase 1 from `package.json` (Start, React, Vite, Tailwind, shadcn).
+## Exact versions (filled in 2026-11-17, Phase 1)
+| Package | Installed | Note |
+|---|---|---|
+| `@tanstack/react-start` | 1.169.5 | the framework |
+| `@tanstack/react-router` | 1.170.46 | routing |
+| `react` / `react-dom` | 19.3.1 | |
+| `vite` | 8.3.8 | build tool |
+| `tailwindcss` (and `@tailwindcss/vite`) | 4.3.5 | v4, no config file — theme lives in `src/styles.css` |
+| `shadcn` (CLI) | 4.23.0 | run via `npx shadcn@latest add <name>` |
+| `@base-ui/react` | 1.9.0 | primitives under shadcn components (preset `nova`, see ADR 0002) |
+| `typescript` | 6.0.3 | |
+| `eslint` | 10.15.0 | |
+
+Note: `package.json` lists most of these as ranges (e.g. `"vite": "^8"`); the table shows what actually installed per `package-lock.json`.
 
 ## Docs to trust over memory
 - https://tanstack.com/start/latest

@@ -1,13 +1,13 @@
 # Progress
 
 ## Now
-Phase 0 complete and reviewed. Live site: https://johnmark-ong-portfolio.netlify.app (static deploy, no build yet). Inventory in `docs/architecture.md` section A, confirmed by owner. Node v24.22.3 installed via nvm and default-aliased (verified in a fresh shell — old open terminals need `nvm use 24` or a restart). `.nvmrc` contains `24`. Owner decisions recorded: Cebu stays, Atlassian Rovo stays.
+Phase 1 code done, awaiting owner checkpoint. Old site moved to `legacy/`. TanStack Start 1.169.5 + shadcn (nova preset / Base UI) scaffolded at repo root (ADR 0002); npm only (ADR 0003). Build and typecheck pass; dev server verified serving the starter page with a shadcn Button at localhost:3000. Versions filled in `docs/tech-stack.md`; AGENTS.md scripts table updated. Phase 0 committed (ca26fb0); Phase 1 NOT committed yet.
 
 ## Next action
-Phase 0 committed. Start **Phase 1**: move old site into `legacy/`, scaffold TanStack Start + shadcn/ui (see ADR 0002 for chosen route), add one shadcn Button to the home page as a test, fill in versions in `docs/tech-stack.md` and scripts in AGENTS.md. Checkpoint: `npm run dev` shows the starter page with a shadcn button; `npm run build` passes. Note: run node/npm commands with Node 24 (`nvm use 24`) — non-interactive shells still see v22.
+Owner: open http://localhost:3000 and confirm the starter page + Button show. Then review `git status` and confirm so Phase 1 gets committed. After that: Phase 2 — add `@netlify/vite-plugin-tanstack-start`, connect GitHub repo to Netlify, deploy the branch.
 
 ## Blocked / open questions
-- (none)
+- VS Code terminals show Node v22 until VS Code is fully restarted (background server holds old PATH); `nvm use 24` works per-terminal. Cosmetic, does not block anything.
 
 ## Blocked / open questions
 - (none)

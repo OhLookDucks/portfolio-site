@@ -27,9 +27,11 @@ Exact script names come from `package.json`. Check it before running anything an
 | Purpose | Command |
 |---|---|
 | Install | `npm install` |
-| Dev server | `npm run dev` (open the URL it prints) |
+| Dev server | `npm run dev` (open the URL it prints, port 3000) |
 | Production build | `npm run build` |
-| Type check | `npx tsc --noEmit` |
+| Type check | `npm run typecheck` (same as `npx tsc --noEmit`) |
+| Regenerate route tree | `npm run generate-routes` (only if routes changed outside the dev server) |
+| Lint | `npm run lint` |
 | Add a shadcn component | `npx shadcn@latest add <name>` |
 | Netlify draft deploy | `npx netlify deploy` |
 
