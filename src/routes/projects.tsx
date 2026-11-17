@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
+import { Link } from "@tanstack/react-router"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 
 export const Route = createFileRoute("/projects")({
@@ -22,9 +23,11 @@ const PROJECTS: {
   meta: string
   description: string
   bullets?: string[]
+  detail?: boolean
 }[] = [
   {
     title: "Downloads auto-sorter",
+    detail: true,
     meta: "Python · Windows Task Scheduler",
     description:
       "A script that keeps my Downloads folder organized without me touching it. It sorts files into folders by type, compares file contents to catch true duplicates and sets them aside, and runs by itself every 30 minutes.",
@@ -63,7 +66,17 @@ function Projects() {
           <Card key={project.title}>
             <CardHeader>
               <h2 className="flex items-center gap-2 text-lg font-bold">
-                {project.title}
+                {project.detail ? (
+                  <Link
+                    to="/projects/downloads-auto-sorter"
+                    search={{ variant: "A" }}
+                    className="hover:text-primary"
+                  >
+                    {project.title}
+                  </Link>
+                ) : (
+                  project.title
+                )}
                 {project.tag ? (
                   <span className="rounded-full bg-peach px-2.5 py-0.5 text-xs font-medium text-[#7a3e12]">
                     {project.tag}

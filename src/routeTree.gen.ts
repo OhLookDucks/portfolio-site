@@ -14,6 +14,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SkillsRouteImport } from './routes/skills'
+import { Route as ProjectsDownloadsAutoSorterRouteImport } from './routes/projects_.downloads-auto-sorter'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,6 +41,12 @@ const SkillsRoute = SkillsRouteImport.update({
   path: '/skills',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsDownloadsAutoSorterRoute =
+  ProjectsDownloadsAutoSorterRouteImport.update({
+    id: '/projects_/downloads-auto-sorter',
+    path: '/projects/downloads-auto-sorter',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -47,6 +54,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/skills': typeof SkillsRoute
+  '/projects/downloads-auto-sorter': typeof ProjectsDownloadsAutoSorterRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +62,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/skills': typeof SkillsRoute
+  '/projects/downloads-auto-sorter': typeof ProjectsDownloadsAutoSorterRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,13 +71,33 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/projects': typeof ProjectsRoute
   '/skills': typeof SkillsRoute
+  '/projects_/downloads-auto-sorter': typeof ProjectsDownloadsAutoSorterRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/contact' | '/projects' | '/skills'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/projects'
+    | '/skills'
+    | '/projects/downloads-auto-sorter'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/contact' | '/projects' | '/skills'
-  id: '__root__' | '/' | '/about' | '/contact' | '/projects' | '/skills'
+  to:
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/projects'
+    | '/skills'
+    | '/projects/downloads-auto-sorter'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/contact'
+    | '/projects'
+    | '/skills'
+    | '/projects_/downloads-auto-sorter'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -77,6 +106,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   ProjectsRoute: typeof ProjectsRoute
   SkillsRoute: typeof SkillsRoute
+  ProjectsDownloadsAutoSorterRoute: typeof ProjectsDownloadsAutoSorterRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -116,6 +146,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SkillsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects_/downloads-auto-sorter': {
+      id: '/projects_/downloads-auto-sorter'
+      path: '/projects/downloads-auto-sorter'
+      fullPath: '/projects/downloads-auto-sorter'
+      preLoaderRoute: typeof ProjectsDownloadsAutoSorterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -125,6 +162,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   ProjectsRoute: ProjectsRoute,
   SkillsRoute: SkillsRoute,
+  ProjectsDownloadsAutoSorterRoute: ProjectsDownloadsAutoSorterRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
