@@ -1,0 +1,10 @@
+# Local Netlify folder written by the CLI when linking a site — never commit it
+.netlify/
+
+# Dependencies and build output (used once the TanStack Start setup exists)
+node_modules/
+dist/
+
+# Secrets — never commit these
+.env
+.env.*
