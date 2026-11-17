@@ -4,7 +4,7 @@
 Phase 2 checkpoint reached (2026-11-18). Git CD is connected — but on a NEW Netlify project `polite-croissant-ca9011` (the re-import created a fresh project instead of reusing `johnmark-ong-portfolio`, which keeps the old manual static site and its URL). PR #1 (tanstack-migration → main) is open; its Deploy Preview built successfully: https://deploy-preview-1--polite-croissant-ca9011.netlify.app (401 for anonymous until preview visibility is set Public on that project). The failed production build on main is expected (main still holds the old static site; fixes itself at Phase 5 merge). All Phase 1+2 code committed and pushed (bd1e587).
 
 ## Next action
-Owner: open the Deploy Preview URL while logged in and confirm the starter page + Button; optionally set preview visibility Public (Project configuration → Visitor access). Then Phase 3 — rebuild pages one at a time starting with theme + layout (warm colours/fonts into global CSS), home/about page with photo.
+Phase 3a (warm theme) and 3b (header/nav/footer + placeholder routes) done, pushed — owner reviewing on the Deploy Preview. Next: 3c Home/About page with photo, then Skills, Projects, CV+Contact.
 
 ## Blocked / open questions
 - Two Netlify projects exist now. At Phase 5 go-live: merge PR #1 → new project's production builds the new site → then rename projects so the final URL is clean (old project owns `johnmark-ong-portfolio` name until then) or attach a custom domain. Decision to make at Phase 5.
