@@ -44,11 +44,10 @@ const PROJECTS: {
   },
   {
     title: "Gmail auto-labeler",
-    tag: "In progress",
     detailTo: "/projects/gmail-auto-labeler",
     meta: "Gmail · Google Sheets · Apps Script",
     description:
-      "Sorting incoming email into groups automatically: my job-application emails flow into a Google Sheet and update themselves via a browser extension and Apps Script. Simple rules first, with AI planned for the messages the rules miss. Already functional, still being finished.",
+      "Job-application emails are sorted into Gmail labels by content and flow into a Google Sheet that updates itself — statuses move automatically when a rejection or interview invite arrives. Runs every 10 minutes. Rules first, AI next.",
   },
   {
     title: "Support ticket triage",
