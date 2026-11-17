@@ -7,7 +7,9 @@
 
 @theme inline {
     --font-heading: var(--font-sans);
-    --font-sans: 'Geist Variable', sans-serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --color-sand: var(--sand);
+    --color-peach: var(--peach);
     --color-sidebar-ring: var(--sidebar-ring);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -48,25 +50,29 @@
     --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+/* Warm design palette, carried over from the old site (docs/architecture.md section A) */
 :root {
-    --background: oklch(1 0 0);
-    --foreground: oklch(0.145 0 0);
-    --card: oklch(1 0 0);
-    --card-foreground: oklch(0.145 0 0);
-    --popover: oklch(1 0 0);
-    --popover-foreground: oklch(0.145 0 0);
-    --primary: oklch(0.205 0 0);
-    --primary-foreground: oklch(0.985 0 0);
-    --secondary: oklch(0.97 0 0);
-    --secondary-foreground: oklch(0.205 0 0);
-    --muted: oklch(0.97 0 0);
-    --muted-foreground: oklch(0.556 0 0);
-    --accent: oklch(0.97 0 0);
-    --accent-foreground: oklch(0.205 0 0);
+    --sand: #f3ede4;
+    --peach: #fde3cf;
+
+    --background: #faf8f5;
+    --foreground: #243238;
+    --card: #ffffff;
+    --card-foreground: #243238;
+    --popover: #ffffff;
+    --popover-foreground: #243238;
+    --primary: #0f766e;
+    --primary-foreground: #ffffff;
+    --secondary: #d9efec;
+    --secondary-foreground: #0b5c56;
+    --muted: #f3ede4;
+    --muted-foreground: #5d6c72;
+    --accent: #d9efec;
+    --accent-foreground: #0b5c56;
     --destructive: oklch(0.577 0.245 27.325);
-    --border: oklch(0.922 0 0);
-    --input: oklch(0.922 0 0);
-    --ring: oklch(0.708 0 0);
+    --border: #e9dfd2;
+    --input: #e9dfd2;
+    --ring: #0f766e;
     --chart-1: oklch(0.87 0 0);
     --chart-2: oklch(0.556 0 0);
     --chart-3: oklch(0.439 0 0);
