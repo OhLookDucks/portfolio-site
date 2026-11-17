@@ -15,6 +15,8 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SkillsRouteImport } from './routes/skills'
 import { Route as ProjectsDownloadsAutoSorterRouteImport } from './routes/projects_.downloads-auto-sorter'
+import { Route as ProjectsGmailAutoLabelerRouteImport } from './routes/projects_.gmail-auto-labeler'
+import { Route as ProjectsSupportTicketTriageRouteImport } from './routes/projects_.support-ticket-triage'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -47,6 +49,18 @@ const ProjectsDownloadsAutoSorterRoute =
     path: '/projects/downloads-auto-sorter',
     getParentRoute: () => rootRouteImport,
   } as any)
+const ProjectsGmailAutoLabelerRoute =
+  ProjectsGmailAutoLabelerRouteImport.update({
+    id: '/projects_/gmail-auto-labeler',
+    path: '/projects/gmail-auto-labeler',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ProjectsSupportTicketTriageRoute =
+  ProjectsSupportTicketTriageRouteImport.update({
+    id: '/projects_/support-ticket-triage',
+    path: '/projects/support-ticket-triage',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -55,6 +69,8 @@ export interface FileRoutesByFullPath {
   '/projects': typeof ProjectsRoute
   '/skills': typeof SkillsRoute
   '/projects/downloads-auto-sorter': typeof ProjectsDownloadsAutoSorterRoute
+  '/projects/gmail-auto-labeler': typeof ProjectsGmailAutoLabelerRoute
+  '/projects/support-ticket-triage': typeof ProjectsSupportTicketTriageRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -63,6 +79,8 @@ export interface FileRoutesByTo {
   '/projects': typeof ProjectsRoute
   '/skills': typeof SkillsRoute
   '/projects/downloads-auto-sorter': typeof ProjectsDownloadsAutoSorterRoute
+  '/projects/gmail-auto-labeler': typeof ProjectsGmailAutoLabelerRoute
+  '/projects/support-ticket-triage': typeof ProjectsSupportTicketTriageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -72,6 +90,8 @@ export interface FileRoutesById {
   '/projects': typeof ProjectsRoute
   '/skills': typeof SkillsRoute
   '/projects_/downloads-auto-sorter': typeof ProjectsDownloadsAutoSorterRoute
+  '/projects_/gmail-auto-labeler': typeof ProjectsGmailAutoLabelerRoute
+  '/projects_/support-ticket-triage': typeof ProjectsSupportTicketTriageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -82,6 +102,8 @@ export interface FileRouteTypes {
     | '/projects'
     | '/skills'
     | '/projects/downloads-auto-sorter'
+    | '/projects/gmail-auto-labeler'
+    | '/projects/support-ticket-triage'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -90,6 +112,8 @@ export interface FileRouteTypes {
     | '/projects'
     | '/skills'
     | '/projects/downloads-auto-sorter'
+    | '/projects/gmail-auto-labeler'
+    | '/projects/support-ticket-triage'
   id:
     | '__root__'
     | '/'
@@ -98,6 +122,8 @@ export interface FileRouteTypes {
     | '/projects'
     | '/skills'
     | '/projects_/downloads-auto-sorter'
+    | '/projects_/gmail-auto-labeler'
+    | '/projects_/support-ticket-triage'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -107,6 +133,8 @@ export interface RootRouteChildren {
   ProjectsRoute: typeof ProjectsRoute
   SkillsRoute: typeof SkillsRoute
   ProjectsDownloadsAutoSorterRoute: typeof ProjectsDownloadsAutoSorterRoute
+  ProjectsGmailAutoLabelerRoute: typeof ProjectsGmailAutoLabelerRoute
+  ProjectsSupportTicketTriageRoute: typeof ProjectsSupportTicketTriageRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -153,6 +181,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsDownloadsAutoSorterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects_/gmail-auto-labeler': {
+      id: '/projects_/gmail-auto-labeler'
+      path: '/projects/gmail-auto-labeler'
+      fullPath: '/projects/gmail-auto-labeler'
+      preLoaderRoute: typeof ProjectsGmailAutoLabelerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects_/support-ticket-triage': {
+      id: '/projects_/support-ticket-triage'
+      path: '/projects/support-ticket-triage'
+      fullPath: '/projects/support-ticket-triage'
+      preLoaderRoute: typeof ProjectsSupportTicketTriageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -163,6 +205,8 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsRoute: ProjectsRoute,
   SkillsRoute: SkillsRoute,
   ProjectsDownloadsAutoSorterRoute: ProjectsDownloadsAutoSorterRoute,
+  ProjectsGmailAutoLabelerRoute: ProjectsGmailAutoLabelerRoute,
+  ProjectsSupportTicketTriageRoute: ProjectsSupportTicketTriageRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -17,17 +17,22 @@ export const Route = createFileRoute("/projects")({
 })
 
 // Projects carried over word-for-word from the old site
+// The detail routes exist as separate pages (wayfinder ticket #7); the two
+// later ones are typed as a union so the Link stays type-safe.
 const PROJECTS: {
   title: string
   tag?: string
   meta: string
   description: string
   bullets?: string[]
-  detail?: boolean
+  detailTo?:
+    | "/projects/downloads-auto-sorter"
+    | "/projects/gmail-auto-labeler"
+    | "/projects/support-ticket-triage"
 }[] = [
   {
     title: "Downloads auto-sorter",
-    detail: true,
+    detailTo: "/projects/downloads-auto-sorter",
     meta: "Python · Windows Task Scheduler",
     description:
       "A script that keeps my Downloads folder organized without me touching it. It sorts files into folders by type, compares file contents to catch true duplicates and sets them aside, and runs by itself every 30 minutes.",
@@ -40,6 +45,7 @@ const PROJECTS: {
   {
     title: "Gmail auto-labeler",
     tag: "In progress",
+    detailTo: "/projects/gmail-auto-labeler",
     meta: "Gmail · Google Sheets · Apps Script",
     description:
       "Sorting incoming email into groups automatically: my job-application emails flow into a Google Sheet and update themselves via a browser extension and Apps Script. Simple rules first, with AI planned for the messages the rules miss. Already functional, still being finished.",
@@ -47,6 +53,7 @@ const PROJECTS: {
   {
     title: "Support ticket triage",
     tag: "Planned",
+    detailTo: "/projects/support-ticket-triage",
     meta: "No-code automation · AI",
     description:
       "A workflow that reads incoming support messages, tags the topic and urgency, and routes each one to the right queue.",
@@ -66,11 +73,8 @@ function Projects() {
           <Card key={project.title}>
             <CardHeader>
               <h2 className="flex items-center gap-2 text-lg font-bold">
-                {project.detail ? (
-                  <Link
-                    to="/projects/downloads-auto-sorter"
-                    className="hover:text-primary"
-                  >
+                {project.detailTo ? (
+                  <Link to={project.detailTo} className="hover:text-primary">
                     {project.title}
                   </Link>
                 ) : (
