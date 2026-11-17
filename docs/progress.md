@@ -1,13 +1,14 @@
 # Progress
 
 ## Now
-Phase 1 code done, awaiting owner checkpoint. Old site moved to `legacy/`. TanStack Start 1.169.5 + shadcn (nova preset / Base UI) scaffolded at repo root (ADR 0002); npm only (ADR 0003). Build and typecheck pass; dev server verified serving the starter page with a shadcn Button at localhost:3000. Versions filled in `docs/tech-stack.md`; AGENTS.md scripts table updated. Phase 0 committed (ca26fb0); Phase 1 NOT committed yet.
+Phase 2 code done; Phase 1 committed (90e8c10). Netlify plugin installed and registered in `vite.config.ts`; build + typecheck pass; `npx netlify deploy --build` draft deploy of the NEW TanStack starter works on Netlify Functions. Production still shows the old site. Git CD not connected yet. Phase 2 code changes NOT committed yet (vite.config.ts, package.json, package-lock.json, ajv devDep, docs).
 
 ## Next action
-Owner: open http://localhost:3000 and confirm the starter page + Button show. Then review `git status` and confirm so Phase 1 gets committed. After that: Phase 2 — add `@netlify/vite-plugin-tanstack-start`, connect GitHub repo to Netlify, deploy the branch.
+Owner: (1) open the draft URL from the last deploy — visible when logged into Netlify; (2) fix preview visibility: Project configuration → General → Visitor access → set Deploy previews/branch deploys to Public; (3) connect the repo for Git CD per `docs/netlify.md` ("Connect the repo"). Then agent commits Phase 2, pushes `tanstack-migration`, and the branch deploy URL is the checkpoint.
 
 ## Blocked / open questions
-- VS Code terminals show Node v22 until VS Code is fully restarted (background server holds old PATH); `nvm use 24` works per-terminal. Cosmetic, does not block anything.
+- ajv peer-dep: Netlify plugin needs ajv@8; scaffold's `legacy-peer-deps=true` skips peers — fixed with explicit `ajv@^8` devDependency (see `docs/netlify.md`).
+- VS Code terminals show Node v22 until VS Code fully restarts; `nvm use 24` per-terminal. Cosmetic.
 
 ## Blocked / open questions
 - (none)
