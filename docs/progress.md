@@ -1,10 +1,10 @@
 # Progress
 
 ## Now
-Phase 3 content complete (2026-11-18): warm theme, shared header/nav/footer, Home (hero + photo + About), Skills (5 card groups incl. AI-agent learning), Projects (3 cards with peach tags), Contact (sand card + 3 buttons). All pushed to PR #1; owner reviews on the Deploy Preview at https://deploy-preview-1--incredible-gecko-ee96a8.netlify.app (that project is the Git-connected one; the `polite-croissant-ca9011` duplicate was deleted by the owner).
+Wayfinder milestone map charted on GitHub Issues (2026-11-18): map = issue #2 "Portfolio milestones: setup to deployment", 8 tickets #3–#10 in milestones Foundations & research / Project detail pages / Go-live. Two fact tickets already resolved: Downloads auto-sorter fully recovered from the owner's PC (task \Sort Downloads, script in Documents/automation, 119 lines stdlib Python) and Gmail auto-labeler structure captured from the live Sheet (8 columns; filters → extension → Apps Script; owner warned the Sheet link is public). Research ticket #3 running in background.
 
 ## Next action
-Owner reviews Home/Skills/Projects/Contact on the preview (phone + desktop). Then **Phase 4 — quality pass**: rules check (no Zendesk/Jira, no phone; Cebu approved), page titles/descriptions per route, typo/link pass. Then Phase 5 — merge PR #1, go live, clean URL.
+Work the map: frontier ticket #6 "Prototype the project detail page" (unblocked now #4/#5 are closed) — build a cheap prototype detail page for the owner to react to. Research #3 lands in background. Then #7 build pages, #10 CV, #8/#9 go-live decisions and execution.
 
 ## Blocked / open questions
 - **CV PDF needs updating** to match the new skills (AI coding agents, portfolio tools) — the PDF is an external artifact; owner to decide: agent drafts new CV content for them to regenerate, or leave as is for now.
