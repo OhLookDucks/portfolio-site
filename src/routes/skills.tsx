@@ -8,7 +8,8 @@ import {
 
 export const Route = createFileRoute("/skills")({ component: Skills })
 
-// Skill groups and items carried over word-for-word from the old site
+// Skill groups carried over from the old site, plus the hands-on learning group:
+// "Building this portfolio" lists only tools actually used in this rebuild.
 const SKILL_GROUPS: { name: string; items: string }[] = [
   { name: "Support platforms", items: "Freshworks, Amazon Connect, Slack" },
   {
@@ -17,11 +18,15 @@ const SKILL_GROUPS: { name: string; items: string }[] = [
   },
   {
     name: "Automation and AI",
-    items: "Python (learning), Windows Task Scheduler, ChatGPT, Claude, Gemini, Atlassian Rovo",
+    items: "Python (learning), Windows Task Scheduler, AI coding agents (pairing with Claude), ChatGPT, Claude, Gemini, Atlassian Rovo",
   },
   {
     name: "Support work",
     items: "Inbound and outbound calls, email management, live chat, technical troubleshooting, COI compliance, content moderation",
+  },
+  {
+    name: "Learning by building this portfolio",
+    items: "AI coding agents (Claude), TanStack Start, React, Tailwind CSS, Netlify, Git and GitHub, VS Code with WSL",
   },
 ]
 
@@ -31,7 +36,8 @@ function Skills() {
       <h1 className="text-3xl font-extrabold">Skills and tools</h1>
       <p className="mt-2 text-muted-foreground">
         What I use day to day in support work, and what I&rsquo;m learning for
-        automation.
+        automation — including building this very site hands-on with an AI
+        coding agent.
       </p>
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {SKILL_GROUPS.map((group) => (
