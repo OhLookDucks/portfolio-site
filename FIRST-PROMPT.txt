@@ -1,0 +1,9 @@
+Read AGENTS.md and everything in docs/. This is Phase 0 of docs/plan.md. Do NOT change any site files yet and do NOT scaffold anything.
+
+Please:
+1. Confirm you are on the branch `tanstack-migration` (create it if not) and show `git status`.
+2. Check my environment from inside WSL: `node -v` (must be 24), `npm -v`, `git --version`, and `pwd` (must NOT be under /mnt/c). Tell me about anything off.
+3. Add a `.nvmrc` file containing `24`.
+4. Inspect the existing site and fill in section A of docs/architecture.md: every page, where text, styles, photo and CV files live, fonts and colours, and anything that conflicts with my rules in AGENTS.md (Zendesk/Jira, phone number or town).
+5. Update docs/progress.md.
+Explain everything in plain language, and stop after step 5 so I can review the inventory.
