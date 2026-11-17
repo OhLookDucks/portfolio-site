@@ -34,7 +34,7 @@ function About() {
         with a dedicated home office and reliable fiber internet.
       </p>
       <p className="mt-4 max-w-3xl">
-        These days I&rsquo;m learning automation by building it — this very
+        These days I&rsquo;m learning automation by building it: this very
         portfolio is being rebuilt hands-on together with an AI coding agent.
       </p>
       <div className="mt-6">

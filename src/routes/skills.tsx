@@ -48,7 +48,7 @@ function Skills() {
       <h1 className="text-3xl font-extrabold">Skills and tools</h1>
       <p className="mt-2 text-muted-foreground">
         What I use day to day in support work, and what I&rsquo;m learning for
-        automation — including building this very site hands-on with an AI
+        automation, including building this very site hands-on with an AI
         coding agent.
       </p>
       <div className="mt-8 grid gap-4 sm:grid-cols-2">

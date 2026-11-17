@@ -9,7 +9,7 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "Small automations I've built or am planning — Downloads auto-sorter, Gmail auto-labeler, and support ticket triage.",
+          "Small automations I've built or am planning: Downloads auto-sorter, Gmail auto-labeler, and support ticket triage.",
       },
     ],
   }),
@@ -47,7 +47,7 @@ const PROJECTS: {
     detailTo: "/projects/gmail-auto-labeler",
     meta: "Gmail · Google Sheets · Apps Script",
     description:
-      "Job-application emails are sorted into Gmail labels by content and flow into a Google Sheet that updates itself — statuses move automatically when a rejection or interview invite arrives. Runs every 10 minutes. Rules first, AI next.",
+      "Job-application emails are sorted into Gmail labels by content and flow into a Google Sheet that updates itself: statuses move automatically when a rejection or interview invite arrives. Runs every 10 minutes. Rules first, AI next.",
   },
   {
     title: "Support ticket triage",
