@@ -1,0 +1,23 @@
+# Local Netlify folder written by the CLI when linking a site — never commit it
+.netlify/
+
+# Dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+.output/
+.vinxi/
+.nitro/
+.tanstack/
+.wrangler/
+
+# Secrets — never commit these
+.env
+.env.*
+*.local
+
+# Generated / OS noise
+*.tsbuildinfo
+__unconfig*
+todos.json
+.DS_Store
