@@ -1,20 +1,19 @@
 # Progress
 
 ## Now
-Phase 2 checkpoint reached (2026-11-18). Git CD is connected — but on a NEW Netlify project `polite-croissant-ca9011` (the re-import created a fresh project instead of reusing `johnmark-ong-portfolio`, which keeps the old manual static site and its URL). PR #1 (tanstack-migration → main) is open; its Deploy Preview built successfully: https://deploy-preview-1--polite-croissant-ca9011.netlify.app (401 for anonymous until preview visibility is set Public on that project). The failed production build on main is expected (main still holds the old static site; fixes itself at Phase 5 merge). All Phase 1+2 code committed and pushed (bd1e587).
+Phase 3 content complete (2026-11-18): warm theme, shared header/nav/footer, Home (hero + photo + About), Skills (5 card groups incl. AI-agent learning), Projects (3 cards with peach tags), Contact (sand card + 3 buttons). All pushed to PR #1; owner reviews on the Deploy Preview at https://deploy-preview-1--incredible-gecko-ee96a8.netlify.app (that project is the Git-connected one; the `polite-croissant-ca9011` duplicate was deleted by the owner).
 
 ## Next action
-Phase 3a (warm theme) and 3b (header/nav/footer + placeholder routes) done, pushed — owner reviewing on the Deploy Preview. Next: 3c Home/About page with photo, then Skills, Projects, CV+Contact.
+Owner reviews Home/Skills/Projects/Contact on the preview (phone + desktop). Then **Phase 4 — quality pass**: rules check (no Zendesk/Jira, no phone; Cebu approved), page titles/descriptions per route, typo/link pass. Then Phase 5 — merge PR #1, go live, clean URL.
 
 ## Blocked / open questions
-- Two Netlify projects exist now. At Phase 5 go-live: merge PR #1 → new project's production builds the new site → then rename projects so the final URL is clean (old project owns `johnmark-ong-portfolio` name until then) or attach a custom domain. Decision to make at Phase 5.
+- **CV PDF needs updating** to match the new skills (AI coding agents, portfolio tools) — the PDF is an external artifact; owner to decide: agent drafts new CV content for them to regenerate, or leave as is for now.
+- Netlify projects: `incredible-gecko-ee96a8` is the keeper (rename at Phase 5 for a clean URL). Old `johnmark-ong-portfolio` + `johnmarkong` projects still exist with no repo — candidates for deletion at Phase 5 (destructive, owner's call).
 - ajv peer-dep fixed with explicit `ajv@^8` devDependency (see `docs/netlify.md`). Do not remove.
 - VS Code terminals show Node v22 until VS Code fully restarts; `nvm use 24` per-terminal. Cosmetic.
-
-## Blocked / open questions
-- (none)
 
 ## Log
 - (date): added AGENTS.md and docs/ for the TanStack Start + shadcn/ui + Netlify rebuild
 - 2026-11-17: agent-skills setup — added `docs/agents/` (issue tracker, triage labels, domain docs) and the Agent skills section in `AGENTS.md`; created the triage labels on GitHub
 - 2026-11-17: Netlify site created (`johnmark-ong-portfolio`), existing static site deployed via CLI, project made public in the Netlify UI (new projects are private by default), `.gitignore` added
+- 2026-11-18: Phase 0–2 done and committed; PR #1 open; Git CD connected (project `incredible-gecko-ee96a8` after import retries); Phase 3 pages built and pushed
