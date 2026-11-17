@@ -30,7 +30,7 @@ const SKILL_GROUPS: { name: string; items: string }[] = [
   },
   {
     name: "Automation and AI",
-    items: "Python (learning), Windows Task Scheduler, AI coding agents (pairing with Claude), ChatGPT, Claude, Gemini, Atlassian Rovo",
+    items: "Python (learning), Windows Task Scheduler, AI coding agents (ZCode, pairing with Claude), ChatGPT, Claude, Gemini, Atlassian Rovo",
   },
   {
     name: "Support work",
@@ -38,7 +38,7 @@ const SKILL_GROUPS: { name: string; items: string }[] = [
   },
   {
     name: "Learning by building this portfolio",
-    items: "AI coding agents (Claude), TanStack Start, React, Tailwind CSS, Netlify, Git and GitHub, VS Code with WSL",
+    items: "AI coding agents (ZCode + Claude), TanStack Start, React, Tailwind CSS, Netlify, Git and GitHub, VS Code with WSL",
   },
 ]
 
