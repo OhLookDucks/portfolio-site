@@ -1,13 +1,14 @@
 # Progress
 
 ## Now
-Phase 2 code done; Phase 1 committed (90e8c10). Netlify plugin installed and registered in `vite.config.ts`; build + typecheck pass; `npx netlify deploy --build` draft deploy of the NEW TanStack starter works on Netlify Functions. Production still shows the old site. Git CD not connected yet. Phase 2 code changes NOT committed yet (vite.config.ts, package.json, package-lock.json, ajv devDep, docs).
+Phase 2 checkpoint reached (2026-11-18). Git CD is connected — but on a NEW Netlify project `polite-croissant-ca9011` (the re-import created a fresh project instead of reusing `johnmark-ong-portfolio`, which keeps the old manual static site and its URL). PR #1 (tanstack-migration → main) is open; its Deploy Preview built successfully: https://deploy-preview-1--polite-croissant-ca9011.netlify.app (401 for anonymous until preview visibility is set Public on that project). The failed production build on main is expected (main still holds the old static site; fixes itself at Phase 5 merge). All Phase 1+2 code committed and pushed (bd1e587).
 
 ## Next action
-Owner: (1) open the draft URL from the last deploy — visible when logged into Netlify; (2) fix preview visibility: Project configuration → General → Visitor access → set Deploy previews/branch deploys to Public; (3) connect the repo for Git CD per `docs/netlify.md` ("Connect the repo"). Then agent commits Phase 2, pushes `tanstack-migration`, and the branch deploy URL is the checkpoint.
+Owner: open the Deploy Preview URL while logged in and confirm the starter page + Button; optionally set preview visibility Public (Project configuration → Visitor access). Then Phase 3 — rebuild pages one at a time starting with theme + layout (warm colours/fonts into global CSS), home/about page with photo.
 
 ## Blocked / open questions
-- ajv peer-dep: Netlify plugin needs ajv@8; scaffold's `legacy-peer-deps=true` skips peers — fixed with explicit `ajv@^8` devDependency (see `docs/netlify.md`).
+- Two Netlify projects exist now. At Phase 5 go-live: merge PR #1 → new project's production builds the new site → then rename projects so the final URL is clean (old project owns `johnmark-ong-portfolio` name until then) or attach a custom domain. Decision to make at Phase 5.
+- ajv peer-dep fixed with explicit `ajv@^8` devDependency (see `docs/netlify.md`). Do not remove.
 - VS Code terminals show Node v22 until VS Code fully restarts; `nvm use 24` per-terminal. Cosmetic.
 
 ## Blocked / open questions
