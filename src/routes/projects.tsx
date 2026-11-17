@@ -69,7 +69,6 @@ function Projects() {
                 {project.detail ? (
                   <Link
                     to="/projects/downloads-auto-sorter"
-                    search={{ variant: "A" }}
                     className="hover:text-primary"
                   >
                     {project.title}
