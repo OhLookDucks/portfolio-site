@@ -39,7 +39,7 @@ const PROJECTS: {
     tag: "In progress",
     meta: "Gmail · Google Sheets · Apps Script",
     description:
-      "Sorting incoming email into groups automatically: my job-application emails flow into a Google Sheet and update themselves via a browser extension and Apps Script. Simple rules first, with AI planned for the messages the rules miss. Already functional and in daily use, still being finished.",
+      "Sorting incoming email into groups automatically: my job-application emails flow into a Google Sheet and update themselves via a browser extension and Apps Script. Simple rules first, with AI planned for the messages the rules miss. Already functional, still being finished.",
   },
   {
     title: "Support ticket triage",
