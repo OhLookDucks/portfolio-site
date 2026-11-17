@@ -1,10 +1,10 @@
 # Progress
 
 ## Now
-Gmail auto-labeler FINISHED and owner-verified (2026-11-18): merged script runs every 10 minutes — content-based Gmail labels + automatic status updates (rejection → Rejected with Auto note). Issue #11 closed; portfolio /projects card + gmail page updated to the finished scope (8cf9e8e, pushed). Map #2: #3-#7 + #11 closed; frontier = #10 (CV PDF) and #8 (go-live decisions), then #9 (execute).
+GO-LIVE COMPLETE (2026-11-18). Production URL https://johnmark-ong-portfolio.netlify.app serves the new TanStack Start site (public, verified). PR #1 + #12 merged into main; all wayfinder tickets closed (#3-#11) including #10 (CV rebuilt, shipped to public/JohnMark_Ong_CV.pdf) and #8/#9 (go-live decisions + execution: rename swap done, retired projects johnmarkong + johnmark-ong-portfolio-old deleted). Netlify now has exactly ONE project. Milestone map #2: destination reached.
 
 ## Next action
-Owner: review the updated gmail page on the preview; decide the CV PDF route (#10) and the go-live decisions (#8: merge PR #1? clean URL name? delete old Netlify projects johnmark-ong-portfolio + johnmarkong? custom domain now or later?). Then #9 execute go-live. Owner also reminded to set the tracker Sheet sharing to Restricted before client demos.
+Milestone map fulfilled. New work candidates (not started): Support ticket triage build in a no-code tool (owner learning n8n/Make/GHL for upskilling — plain-language walkthrough given 2026-11-18); client-ready Rules tab + dashboard for the Gmail tracker; custom domain purchase (optional). Skills page now names ZCode.
 
 ## Blocked / open questions
 - **CV PDF needs updating** to match the new skills (AI coding agents, portfolio tools) — the PDF is an external artifact; owner to decide: agent drafts new CV content for them to regenerate, or leave as is for now.
