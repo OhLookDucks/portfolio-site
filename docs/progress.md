@@ -1,10 +1,10 @@
 # Progress
 
 ## Now
-Ticket #7 closed (2026-11-18): all three project detail pages live in the A+C style via the shared `CaseStudy` component (`src/components/case-study.tsx`), all /projects cards link through. Wayfinder map #2 progress: #4 #5 #6 #7 closed; #3 research closed; frontier now #10 (CV PDF) and #8 (go-live decisions), then #9 (execute). Owner also got a local bonus: sorter handles folders now, task switched to windowless pythonw.exe, `sorter-preview` alias added permanently.
+Gmail auto-labeler FINISHED and owner-verified (2026-11-18): merged script runs every 10 minutes — content-based Gmail labels + automatic status updates (rejection → Rejected with Auto note). Issue #11 closed; portfolio /projects card + gmail page updated to the finished scope (8cf9e8e, pushed). Map #2: #3-#7 + #11 closed; frontier = #10 (CV PDF) and #8 (go-live decisions), then #9 (execute).
 
 ## Next action
-Ticket #10: update the public CV PDF — decide route (owner regenerates in their CV tool from agent-drafted content, or agent rebuilds the document) and content (add AI coding agents + portfolio-building tools). Then #8 go-live decisions with the owner (merge PR #1? URL name? delete old Netlify projects? custom domain?), then #9 execute. Full-site review on the preview still pending from the owner (phone + desktop).
+Owner: review the updated gmail page on the preview; decide the CV PDF route (#10) and the go-live decisions (#8: merge PR #1? clean URL name? delete old Netlify projects johnmark-ong-portfolio + johnmarkong? custom domain now or later?). Then #9 execute go-live. Owner also reminded to set the tracker Sheet sharing to Restricted before client demos.
 
 ## Blocked / open questions
 - **CV PDF needs updating** to match the new skills (AI coding agents, portfolio tools) — the PDF is an external artifact; owner to decide: agent drafts new CV content for them to regenerate, or leave as is for now.
