@@ -6,7 +6,19 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
-export const Route = createFileRoute("/skills")({ component: Skills })
+export const Route = createFileRoute("/skills")({
+  head: () => ({
+    meta: [
+      { title: "Skills and tools – John Mark Ong" },
+      {
+        name: "description",
+        content:
+          "Support platforms, workspace tools, automation and AI, plus what I'm learning building this portfolio.",
+      },
+    ],
+  }),
+  component: Skills,
+})
 
 // Skill groups carried over from the old site, plus the hands-on learning group:
 // "Building this portfolio" lists only tools actually used in this rebuild.

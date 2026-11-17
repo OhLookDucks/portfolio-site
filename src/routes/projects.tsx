@@ -1,7 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 
-export const Route = createFileRoute("/projects")({ component: Projects })
+export const Route = createFileRoute("/projects")({
+  head: () => ({
+    meta: [
+      { title: "Projects – John Mark Ong" },
+      {
+        name: "description",
+        content:
+          "Small automations I've built or am planning — Downloads auto-sorter, Gmail auto-labeler, and support ticket triage.",
+      },
+    ],
+  }),
+  component: Projects,
+})
 
 // Projects carried over word-for-word from the old site
 const PROJECTS: {

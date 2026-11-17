@@ -1,7 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { Button } from "@/components/ui/button"
 
-export const Route = createFileRoute("/")({ component: Home })
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "John Mark Ong – Support Operations & Automation" },
+      {
+        name: "description",
+        content:
+          "Customer support professional building automations for support teams.",
+      },
+    ],
+  }),
+  component: Home,
+})
 
 function Home() {
   return (
