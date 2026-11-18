@@ -47,7 +47,7 @@ const PROJECTS: {
     detailTo: "/projects/gmail-auto-labeler",
     meta: "Gmail · Google Sheets · Apps Script",
     description:
-      "Job-application emails are sorted into Gmail labels by content and flow into a Google Sheet that updates itself: statuses move automatically when a rejection or interview invite arrives. Runs every 10 minutes. Rules first, AI next.",
+      "Job-application emails are sorted into Gmail labels by content and flow into a Google Sheet that updates itself: statuses move automatically when a rejection or interview invite arrives. Runs every 30 minutes. Rules first, AI next.",
   },
   {
     title: "Support ticket triage",
