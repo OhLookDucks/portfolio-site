@@ -54,6 +54,7 @@ Exact script names come from `package.json`. Check it before running anything an
 8. Never commit secrets or `.env` files. Confirm `.gitignore` covers them.
 9. Do not commit until I confirm the result looks right. Do not push to `main`.
 10. Do not run destructive commands (`rm -rf`, `git reset --hard`, force push) without asking first.
+11. No em dashes (—) anywhere on the public site or in CV material. If a dash feels truly needed, ask me first.
 
 ## Working loop (every task)
 1. **Prompt:** I give you a task (`docs/task-template.md`).

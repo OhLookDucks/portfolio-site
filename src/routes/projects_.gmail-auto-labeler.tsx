@@ -30,7 +30,7 @@ function GmailAutoLabelerPage() {
         "Every 30 minutes, a content scanner labels new mail into `Jobs/Requirements`, `Jobs/Rejected`, `Jobs/Interview`, `Jobs/Assessment` and `Jobs/Offer`, based on the phrases in the email, not by hand.",
         "Statuses move themselves: a requirements request flips the row to `Requirements Needed`, a rejection to `Rejected` with an `Auto: Rejected (date)` note, an invite to `Interviewing`, and a status never moves backwards.",
       ]}
-      afterSteps="Simple rules run the pipeline; AI is next for the messages the rules miss."
+      afterSteps="Simple rules run the pipeline; AI is next for the messages the rules miss. It replaced about 15 minutes of copy-paste tracking a day, and the pattern is support ticket triage in miniature: classify by content, move the status forward, never backwards."
       terminal={{
         blocks: [
           {

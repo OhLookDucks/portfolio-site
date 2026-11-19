@@ -57,7 +57,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        {/* Header, page content, footer — flex column keeps the footer at the bottom */}
+        {/* Header, page content, footer: flex column keeps the footer at the bottom */}
         <div className="flex min-h-svh flex-col">
           <SiteHeader />
           <main className="flex-1">{children}</main>

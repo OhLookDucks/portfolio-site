@@ -28,11 +28,7 @@ function Contact() {
         <div className="mt-4 flex flex-wrap gap-3">
           <Button
             render={
-              <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=ongjohnmarkc@gmail.com&su=Hello%20John%20Mark"
-                target="_blank"
-                rel="noreferrer"
-              />
+              <a href="mailto:ongjohnmarkc@gmail.com?subject=Hello%20John%20Mark" />
             }
             nativeButton={false}
           >
@@ -53,6 +49,10 @@ function Contact() {
             Download CV
           </Button>
         </div>
+        {/* Plain-text address: recruiters use every mail tool, not just Gmail */}
+        <p className="mt-4 text-sm text-muted-foreground">
+          ongjohnmarkc@gmail.com
+        </p>
       </div>
     </section>
   )

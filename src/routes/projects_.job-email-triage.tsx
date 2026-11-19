@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router"
 import { CaseStudy } from "@/components/case-study"
 
 // Shipped 2026-11-19: the live n8n workflow "Job Email Triage".
-// Structure only — no real company names or application rows are published.
+// Structure only: no real company names or application rows are published.
 export const Route = createFileRoute("/projects_/job-email-triage")({
   head: () => ({
     meta: [
@@ -30,7 +30,7 @@ function JobEmailTriagePage() {
         "A `filter` drops anything that is not about a job application, so newsletters and noise never reach the log.",
         "Job-related mail lands in a `Google Sheets` triage board with its verdict and reasoning, ready for the morning review.",
       ]}
-      afterSteps="Underneath it, the deterministic Gmail auto-labeler still runs the tracker; this agent is the AI layer for what rules alone can't judge. Rules first, AI where rules fall short, both live at once."
+      afterSteps="Underneath it, the deterministic Gmail auto-labeler still runs the tracker; this agent is the AI layer for what rules alone can't judge. Rules first, AI where rules fall short, both live at once. And the morning review is a glance at one board instead of an inbox dig."
       terminal={{
         blocks: [
           {
