@@ -1,8 +1,8 @@
 # Job email triage workflow (n8n): the plan (v1)
 
-Status: DRAFT v2 — pivoted from "support ticket triage" to job application
-emails (2026-11-19). Waiting for owner approval.
+Status: v1 SHIPPED 2026-11-19 — live in n8n and verified end-to-end.
 Build tool: n8n, self-hosted at localhost:5678.
+Workflow name: "Job Email Triage". Output: "Support Triage Log" spreadsheet.
 
 ## The pivot
 
@@ -62,3 +62,24 @@ This is exactly the story the portfolio case study already promises:
 
 Writing to the Applications tab, auto-labeling Gmail from n8n, dedupe across
 thread replies, auto-replies, dashboards. Each is a later version.
+
+## v1 outcome (2026-11-19)
+
+Shipped and verified: a fresh email was classified by Gemini, a non-job
+email was correctly stopped at the filter, and a test interview email
+landed in the sheet minutes after publishing.
+
+Known v1 limitations (accepted for v1, candidates for v2):
+- Every message in a Gmail thread becomes its own row (no dedupe yet)
+- Timestamps are machine format (ISO)
+- A very short self-sent test email can be judged "not job related"
+
+## v2 candidate improvements
+
+1. Daily digest email (Schedule Trigger -> summarize last 24h -> Gmail):
+   "2 rejections, 1 interview, 3 actions needed" every morning.
+2. Dedupe by Gmail thread: update the existing row instead of appending.
+3. Cheap keyword pre-filter BEFORE Gemini: obvious newsletters never
+   reach the AI (token cost awareness).
+4. Error workflow: n8n emails the owner when any run fails.
+5. Metrics tab: response rate and pipeline counts.

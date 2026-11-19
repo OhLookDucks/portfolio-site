@@ -1,10 +1,10 @@
 # Progress
 
 ## Now
-GO-LIVE COMPLETE (2026-11-18). Production URL https://johnmark-ong-portfolio.netlify.app serves the new TanStack Start site (public, verified). PR #1 + #12 merged into main; all wayfinder tickets closed (#3-#11) including #10 (CV rebuilt, shipped to public/JohnMark_Ong_CV.pdf) and #8/#9 (go-live decisions + execution: rename swap done, retired projects johnmarkong + johnmark-ong-portfolio-old deleted). Netlify now has exactly ONE project. Milestone map #2: destination reached.
+Site live in production since 2026-11-18 (https://johnmark-ong-portfolio.netlify.app). NEW (2026-11-19): JOB EMAIL TRIAGE v1 LIVE in n8n (self-hosted) — workflow "Job Email Triage" published and verified end-to-end: real email classified, non-job mail filtered out, test interview email landed in the "Support Triage Log" sheet. Details and v2 ideas: `docs/email-triage-plan.md`.
 
 ## Next action
-IN PROGRESS: job email triage workflow in n8n (self-hosted, localhost:5678) — plan at `docs/email-triage-plan.md`, reusing the existing "Support Ticket Triage" workflow skeleton (Gmail Trigger -> Gemini -> parse -> Sheets). Later candidates: client-ready Rules tab + dashboard for the Gmail tracker; custom domain purchase (optional). Skills page now names ZCode.
+Build the portfolio case study page for the job email triage (replaces the "Support ticket triage — Planned" card on /projects; sample rows only, no personal data). Then v2 in n8n, in this order: daily digest email, thread dedupe, keyword pre-filter, error alerting, metrics tab. Later candidates: application-funnel dashboard; client-ready Rules tab for the Gmail tracker; custom domain (optional).
 
 ## Blocked / open questions
 - **CV PDF needs updating** to match the new skills (AI coding agents, portfolio tools) — the PDF is an external artifact; owner to decide: agent drafts new CV content for them to regenerate, or leave as is for now.
@@ -19,3 +19,4 @@ IN PROGRESS: job email triage workflow in n8n (self-hosted, localhost:5678) — 
 - 2026-11-18: Phase 0–2 done and committed; PR #1 open; Git CD connected (project `incredible-gecko-ee96a8` after import retries); Phase 3 pages built and pushed
 - 2026-11-19: Gmail auto-labeler hit Google's daily mail quota ("Service invoked too many times"). Script fixed to read only the last 3 days of mail, skip already-labeled mail, cap reads per run, and run every 30 min instead of 10. Live script updated by owner in script.google.com; backup copy now kept in `apps-script/`. Site copy changed from "every 10 minutes" to "every 30 minutes" (case-study page + projects listing)
 - 2026-11-19: email triage plan pivoted from support tickets to job application emails and approved (`docs/email-triage-plan.md`). Existing n8n workflow gets repurposed, not rebuilt; its Sheets node already writes to a separate "Support Triage Log" spreadsheet, so the Apps Script tracker stays untouched. Also: stale Netlify site link fixed (dev server was pointing at a deleted site), root-level personal CV PDFs now gitignored
+- 2026-11-19 (later): Job Email Triage v1 SHIPPED in n8n, built step by step with the owner driving: prompt rewritten for job signals (strict JSON), parse node armored against code fences, IF filter on job_related, sheet remapped (Timestamp/Subject/From/Signal/Company/Role/Next action/Why), published and verified live with a real test email landing in the sheet. Owner learned: node-by-node testing, expressions vs fixed values, branching, executing and auditing runs
