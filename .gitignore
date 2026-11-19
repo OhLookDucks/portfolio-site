@@ -16,6 +16,10 @@ dist-ssr/
 .env.*
 *.local
 
+# Personal CV copies in the repo root contain private contact details — never commit them
+# (the public one lives at public/JohnMark_Ong_CV.pdf and stays tracked)
+/JohnMark_Ong_*.pdf
+
 # Generated / OS noise
 *.tsbuildinfo
 __unconfig*
