@@ -21,15 +21,15 @@ function DownloadsAutoSorterPage() {
     <CaseStudy
       title="Downloads auto-sorter"
       meta="Python · Windows Task Scheduler · running every 30 minutes"
-      problem="My Downloads folder was a landfill: installers, documents, game repacks and screenshots all in one pile, with duplicate files multiplying every time I re-downloaded something."
+      problem="My Downloads folder was a landfill: installers, documents and screenshots all in one pile, with duplicate files multiplying every time I re-downloaded something."
       howIntro="Every 30 minutes, a scheduled task wakes the script up. It then:"
       steps={[
         "Sorts loose files into one of 11 folders, by file type.",
         "Checks duplicates by comparing file contents (SHA-256), not names: true duplicates go to a `Duplicates/` folder, different files are kept side by side.",
-        "Routes loose folders too: a name with repack or install in it goes to `Installers/`, otherwise the most common file type inside decides.",
+        "Routes loose folders too: a name with install in it goes to `Installers/`, otherwise the most common file type inside decides.",
         "Leaves folders touched in the last 24 hours alone, since they may still be in use.",
       ]}
-      afterSteps="A preview mode shows what would move before anything moves, and every run is logged."
+      afterSteps="A preview mode shows what would move before anything moves, and every run is logged. The folder just stays tidy now: zero minutes a week spent sorting it."
       terminal={{
         blocks: [
           {
@@ -42,7 +42,7 @@ function DownloadsAutoSorterPage() {
           },
           {
             prompt: "$ Downloads/ after two weeks",
-            lines: [{ text: "Archives/ Documents/ Images/ Music/ Torrents/ Videos/ …" }],
+              lines: [{ text: "Archives/ Documents/ Images/ Music/ Videos/ …" }],
           },
         ],
         footer: "# every 30 min · 11 categories · nothing overwritten",

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
 import { Button } from "@/components/ui/button"
 
 export const Route = createFileRoute("/")({
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 function Home() {
   return (
     <>
-      {/* Hero — wording, photo and styling carried over from the old site */}
+      {/* Hero: wording, photo and styling carried over from the old site */}
       <section className="mx-auto grid max-w-5xl items-center gap-10 px-4 py-14 md:grid-cols-[1fr_300px]">
         <div>
           <span className="inline-block rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
@@ -37,11 +37,7 @@ function Home() {
             {/* Base UI buttons become links through the render prop */}
             <Button
               render={
-                <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=ongjohnmarkc@gmail.com&su=Hello%20John%20Mark"
-                  target="_blank"
-                  rel="noreferrer"
-                />
+                <a href="mailto:ongjohnmarkc@gmail.com?subject=Hello%20John%20Mark" />
               }
               nativeButton={false}
             >
@@ -63,19 +59,19 @@ function Home() {
         />
       </section>
 
-      {/* About — wording carried over from the old site */}
+      {/* Short pointer: the evidence lives on the About page (site review 2026-11-20) */}
       <section className="mx-auto max-w-5xl px-4 pb-16">
         <h2 className="text-2xl font-bold">About me</h2>
         <p className="mt-3 max-w-3xl">
-          I&rsquo;ve spent over four years helping people with billing
-          questions, device setups, and reservations, on the phone, in chat,
-          and by email. I&rsquo;m careful with details, calm when things change
-          fast, and I like finding ways to make a repeated task easier.
+          Four years in support across telecom and SaaS, and a habit of
+          fixing repeated problems at the root, now pointed at automation.
         </p>
-        <p className="mt-3 max-w-3xl text-muted-foreground">
-          Based in Cebu, Philippines. Comfortable working across time zones,
-          with a dedicated home office and reliable fiber internet.
-        </p>
+        <Link
+          to="/about"
+          className="mt-2 inline-block text-muted-foreground underline underline-offset-4"
+        >
+          The full story, with numbers →
+        </Link>
       </section>
     </>
   )

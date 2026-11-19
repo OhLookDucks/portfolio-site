@@ -22,12 +22,22 @@ function About() {
         Open to support operations and automation roles
       </span>
       <h1 className="mt-4 text-3xl font-extrabold">About me</h1>
-      {/* Wording carried over from the old site */}
+      {/* Evidence first: accounts, daily volume, one concrete win (site review 2026-11-20) */}
       <p className="mt-4 max-w-3xl">
-        I&rsquo;ve spent over four years helping people with billing questions,
-        device setups, and reservations, on the phone, in chat, and by email.
-        I&rsquo;m careful with details, calm when things change fast, and I
-        like finding ways to make a repeated task easier.
+        I&rsquo;ve spent four years in customer support across telecom and
+        SaaS: two telecommunications accounts and a reservation-based SaaS
+        account, on inbound and outbound calls, chat, and email. On a busy
+        day that&rsquo;s 40 to 60 contacts, where being careful with details
+        and calm when things change fast is the job.
+      </p>
+      <p className="mt-3 max-w-3xl">
+        The example I keep coming back to: customers and admins kept calling
+        back about concerns they could solve themselves. So on those calls I
+        walked them through the process, showed them how to navigate it, and
+        pointed them to the knowledge base articles that cover it. The goal
+        was simple: the next time, they wouldn&rsquo;t need to call. That
+        instinct is why I moved into automation; every project on this site
+        is a repeated task I made easier or made disappear.
       </p>
       <p className="mt-3 max-w-3xl text-muted-foreground">
         Based in Cebu, Philippines. Comfortable working across time zones,
@@ -40,11 +50,7 @@ function About() {
       <div className="mt-6">
         <Button
           render={
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=ongjohnmarkc@gmail.com&su=Hello%20John%20Mark"
-              target="_blank"
-              rel="noreferrer"
-            />
+            <a href="mailto:ongjohnmarkc@gmail.com?subject=Hello%20John%20Mark" />
           }
           nativeButton={false}
         >

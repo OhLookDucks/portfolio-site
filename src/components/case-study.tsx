@@ -95,9 +95,7 @@ export function CaseStudy({
         <Button
           render={
             <a
-              href={`https://mail.google.com/mail/?view=cm&fs=1&to=ongjohnmarkc@gmail.com&su=${encodeURIComponent(emailSubject)}`}
-              target="_blank"
-              rel="noreferrer"
+              href={`mailto:ongjohnmarkc@gmail.com?subject=${encodeURIComponent(emailSubject)}`}
             />
           }
           nativeButton={false}

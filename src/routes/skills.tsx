@@ -30,7 +30,7 @@ const SKILL_GROUPS: { name: string; items: string }[] = [
   },
   {
     name: "Automation and AI",
-    items: "Python (learning), Windows Task Scheduler, AI coding agents (ZCode, pairing with Claude), ChatGPT, Claude, Gemini, Atlassian Rovo",
+    items: "n8n (live email-triage workflow shipped), Make (learning), GoHighLevel (learning), Python (learning), Windows Task Scheduler, AI coding agents (ZCode, pairing with Claude), ChatGPT, Claude, Gemini, Atlassian Rovo",
   },
   {
     name: "Support work",
