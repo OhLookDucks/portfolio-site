@@ -9,7 +9,7 @@ export const Route = createFileRoute("/projects")({
       {
         name: "description",
         content:
-          "Small automations I've built or am planning: Downloads auto-sorter, Gmail auto-labeler, and support ticket triage.",
+          "Small automations I've built or am planning: Downloads auto-sorter, Gmail auto-labeler, and a job email triage agent.",
       },
     ],
   }),
@@ -28,7 +28,7 @@ const PROJECTS: {
   detailTo?:
     | "/projects/downloads-auto-sorter"
     | "/projects/gmail-auto-labeler"
-    | "/projects/support-ticket-triage"
+    | "/projects/job-email-triage"
 }[] = [
   {
     title: "Downloads auto-sorter",
@@ -50,12 +50,11 @@ const PROJECTS: {
       "Job-application emails are sorted into Gmail labels by content and flow into a Google Sheet that updates itself: statuses move automatically when a rejection or interview invite arrives. Runs every 30 minutes. Rules first, AI next.",
   },
   {
-    title: "Support ticket triage",
-    tag: "Planned",
-    detailTo: "/projects/support-ticket-triage",
-    meta: "No-code automation · AI",
+    title: "Job email triage",
+    detailTo: "/projects/job-email-triage",
+    meta: "n8n · Gemini · Gmail · Google Sheets",
     description:
-      "A workflow that reads incoming support messages, tags the topic and urgency, and routes each one to the right queue.",
+      "An AI agent that classifies every incoming job email the moment it arrives: signal, company, role and next action land in a triage board, and non-job mail is filtered out before it ever reaches the log. Runs around the clock.",
   },
 ]
 

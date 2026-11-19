@@ -16,7 +16,7 @@ import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SkillsRouteImport } from './routes/skills'
 import { Route as ProjectsDownloadsAutoSorterRouteImport } from './routes/projects_.downloads-auto-sorter'
 import { Route as ProjectsGmailAutoLabelerRouteImport } from './routes/projects_.gmail-auto-labeler'
-import { Route as ProjectsSupportTicketTriageRouteImport } from './routes/projects_.support-ticket-triage'
+import { Route as ProjectsJobEmailTriageRouteImport } from './routes/projects_.job-email-triage'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -55,12 +55,11 @@ const ProjectsGmailAutoLabelerRoute =
     path: '/projects/gmail-auto-labeler',
     getParentRoute: () => rootRouteImport,
   } as any)
-const ProjectsSupportTicketTriageRoute =
-  ProjectsSupportTicketTriageRouteImport.update({
-    id: '/projects_/support-ticket-triage',
-    path: '/projects/support-ticket-triage',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+const ProjectsJobEmailTriageRoute = ProjectsJobEmailTriageRouteImport.update({
+  id: '/projects_/job-email-triage',
+  path: '/projects/job-email-triage',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -70,7 +69,7 @@ export interface FileRoutesByFullPath {
   '/skills': typeof SkillsRoute
   '/projects/downloads-auto-sorter': typeof ProjectsDownloadsAutoSorterRoute
   '/projects/gmail-auto-labeler': typeof ProjectsGmailAutoLabelerRoute
-  '/projects/support-ticket-triage': typeof ProjectsSupportTicketTriageRoute
+  '/projects/job-email-triage': typeof ProjectsJobEmailTriageRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -80,7 +79,7 @@ export interface FileRoutesByTo {
   '/skills': typeof SkillsRoute
   '/projects/downloads-auto-sorter': typeof ProjectsDownloadsAutoSorterRoute
   '/projects/gmail-auto-labeler': typeof ProjectsGmailAutoLabelerRoute
-  '/projects/support-ticket-triage': typeof ProjectsSupportTicketTriageRoute
+  '/projects/job-email-triage': typeof ProjectsJobEmailTriageRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -91,7 +90,7 @@ export interface FileRoutesById {
   '/skills': typeof SkillsRoute
   '/projects_/downloads-auto-sorter': typeof ProjectsDownloadsAutoSorterRoute
   '/projects_/gmail-auto-labeler': typeof ProjectsGmailAutoLabelerRoute
-  '/projects_/support-ticket-triage': typeof ProjectsSupportTicketTriageRoute
+  '/projects_/job-email-triage': typeof ProjectsJobEmailTriageRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -103,7 +102,7 @@ export interface FileRouteTypes {
     | '/skills'
     | '/projects/downloads-auto-sorter'
     | '/projects/gmail-auto-labeler'
-    | '/projects/support-ticket-triage'
+    | '/projects/job-email-triage'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -113,7 +112,7 @@ export interface FileRouteTypes {
     | '/skills'
     | '/projects/downloads-auto-sorter'
     | '/projects/gmail-auto-labeler'
-    | '/projects/support-ticket-triage'
+    | '/projects/job-email-triage'
   id:
     | '__root__'
     | '/'
@@ -123,7 +122,7 @@ export interface FileRouteTypes {
     | '/skills'
     | '/projects_/downloads-auto-sorter'
     | '/projects_/gmail-auto-labeler'
-    | '/projects_/support-ticket-triage'
+    | '/projects_/job-email-triage'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -134,7 +133,7 @@ export interface RootRouteChildren {
   SkillsRoute: typeof SkillsRoute
   ProjectsDownloadsAutoSorterRoute: typeof ProjectsDownloadsAutoSorterRoute
   ProjectsGmailAutoLabelerRoute: typeof ProjectsGmailAutoLabelerRoute
-  ProjectsSupportTicketTriageRoute: typeof ProjectsSupportTicketTriageRoute
+  ProjectsJobEmailTriageRoute: typeof ProjectsJobEmailTriageRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -188,11 +187,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsGmailAutoLabelerRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/projects_/support-ticket-triage': {
-      id: '/projects_/support-ticket-triage'
-      path: '/projects/support-ticket-triage'
-      fullPath: '/projects/support-ticket-triage'
-      preLoaderRoute: typeof ProjectsSupportTicketTriageRouteImport
+    '/projects_/job-email-triage': {
+      id: '/projects_/job-email-triage'
+      path: '/projects/job-email-triage'
+      fullPath: '/projects/job-email-triage'
+      preLoaderRoute: typeof ProjectsJobEmailTriageRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -206,7 +205,7 @@ const rootRouteChildren: RootRouteChildren = {
   SkillsRoute: SkillsRoute,
   ProjectsDownloadsAutoSorterRoute: ProjectsDownloadsAutoSorterRoute,
   ProjectsGmailAutoLabelerRoute: ProjectsGmailAutoLabelerRoute,
-  ProjectsSupportTicketTriageRoute: ProjectsSupportTicketTriageRoute,
+  ProjectsJobEmailTriageRoute: ProjectsJobEmailTriageRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
