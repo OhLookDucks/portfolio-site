@@ -4,7 +4,7 @@
 Site live in production (https://johnmark-ong-portfolio.netlify.app). 2026-11-19: job email triage v1 live in n8n (self-hosted) AND shipped as a portfolio case study — the planned "Support ticket triage" page was replaced by the real "Job email triage" project and deployed to production the same day. Details and v2 ideas: `docs/email-triage-plan.md`.
 
 ## Next action
-IN PROGRESS (2026-11-21): application funnel dashboard in Looker Studio, built over the "JOB APPLICATION TRACKER Demo" spreadsheet (sample rows only, never the live tracker). Owner asked for funnels to be explained from scratch. Daily digest: built and test email received; owner to confirm the workflow is Published (8 AM Manila schedule). Queued: error notifications workflow (n8n production checklist item), digest HTML formatting polish, funnel dashboard embed/link on the portfolio site.
+DONE (2026-11-21): application funnel dashboard v1 in Looker Studio ("Job Application Funnel (Demo)") — data source over the Demo copy (headers flattened to row 1), four filtered scorecards (Total 8, Interviews 1, Offers 1, Rejected 1), status bar chart, applications-over-time time series. Built click-by-click with the owner. Optional polish: response-rate calculated field, theme colors, share link + embed on the portfolio site. Queued: n8n error notifications workflow, digest HTML formatting polish, triage timestamp verification on next real email. Reminder flow: digest shipped -> dashboard started and v1 done.
 
 ## Blocked / open questions
 - **CV PDF needs updating** to match the new skills (AI coding agents, portfolio tools) — the PDF is an external artifact; owner to decide: agent drafts new CV content for them to regenerate, or leave as is for now.
