@@ -51,6 +51,22 @@ function GmailAutoLabelerPage() {
         ],
         footer: "# auto-updated · labels by content · every 30 min",
       }}
+      gallery={[
+        {
+          src: "/images/labeler-labels.webp",
+          alt: "Gmail with the Jobs label group in the sidebar (Assessment, Confirmation, Interview, Needs Review, Offer, Rejected, Requirements) and an application confirmation email open, showing 192 conversations sorted under Jobs/Confirmation",
+          caption: "Mail sorted by content: 192 application confirmations sit under Jobs/Confirmation, findable with one search.",
+          width: 1400,
+          height: 691,
+        },
+        {
+          src: "/images/labeler-tracker.webp",
+          alt: "The Applications tracker with sample rows showing statuses Applied, Rejected, Test Task, Interviewing and To Apply, and automatic notes like Auto: Rejected (Nov 17) in the Notes column",
+          caption: "The Applications tab updates itself: statuses only move up, and every automatic move leaves an Auto: note with the date.",
+          width: 1400,
+          height: 102,
+        },
+      ]}
       learnings={[
         "Deciding the columns first gave the spreadsheet a fixed shape, which makes automation easy: the script always knows where each detail goes.",
         "Deterministic rules should run the show; AI belongs to the messages the rules can't catch, not to the whole pipeline.",
