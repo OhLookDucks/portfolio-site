@@ -24,7 +24,6 @@ const PROJECTS: {
   tag?: string
   meta: string
   description: string
-  bullets?: string[]
   detailTo?:
     | "/projects/downloads-auto-sorter"
     | "/projects/gmail-auto-labeler"
@@ -36,11 +35,6 @@ const PROJECTS: {
     meta: "Python · Windows Task Scheduler",
     description:
       "A script that keeps my Downloads folder organized without me touching it. It sorts files into folders by type, compares file contents to catch true duplicates and sets them aside, and runs by itself every 30 minutes.",
-    bullets: [
-      "Has a preview mode, so I can see what would move before anything moves.",
-      "Skips half-finished downloads and never overwrites a file with a different version.",
-      "Fixed a scheduling bug by tracing the task's error code to a missing program path.",
-    ],
   },
   {
     title: "Gmail auto-labeler",
@@ -88,13 +82,6 @@ function Projects() {
             </CardHeader>
             <CardContent>
               <p>{project.description}</p>
-              {project.bullets ? (
-                <ul className="mt-3 list-disc space-y-1 pl-5 text-muted-foreground">
-                  {project.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-              ) : null}
             </CardContent>
           </Card>
         ))}

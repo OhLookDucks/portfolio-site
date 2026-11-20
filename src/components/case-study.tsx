@@ -31,6 +31,16 @@ export interface CaseStudyProps {
     blocks: { prompt: string; lines: { text: string; note?: string }[] }[]
     footer?: string
   }
+  // Optional screenshots section. Width and height are the real pixel sizes,
+  // so the page reserves space and nothing jumps while images load.
+  gallery?: {
+    src: string
+    alt: string
+    caption: string
+    width: number
+    height: number
+  }[]
+  galleryTitle?: string
   learnings: string[]
   learningsTitle?: string
   emailSubject: string
@@ -45,6 +55,8 @@ export function CaseStudy({
   steps,
   afterSteps,
   terminal,
+  gallery,
+  galleryTitle = "What it looks like",
   learnings,
   learningsTitle = "What I learned",
   emailSubject,
@@ -83,6 +95,29 @@ export function CaseStudy({
           <p className="mt-3 text-emerald-400">{terminal.footer}</p>
         ) : null}
       </div>
+
+      {gallery && gallery.length > 0 ? (
+        <>
+          <h2 className="mt-8 text-xl font-bold">{galleryTitle}</h2>
+          <div className="mt-3 space-y-6">
+            {gallery.map((g) => (
+              <figure key={g.src}>
+                <img
+                  src={g.src}
+                  alt={g.alt}
+                  width={g.width}
+                  height={g.height}
+                  loading="lazy"
+                  className="h-auto w-full rounded-lg border border-border"
+                />
+                <figcaption className="mt-2 text-sm text-muted-foreground">
+                  {g.caption}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </>
+      ) : null}
 
       <h2 className="mt-8 text-xl font-bold">{learningsTitle}</h2>
       <ul className="mt-2 list-disc space-y-2 pl-5">
