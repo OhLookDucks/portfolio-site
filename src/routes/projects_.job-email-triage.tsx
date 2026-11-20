@@ -51,6 +51,29 @@ function JobEmailTriagePage() {
         ],
         footer: "# classified · filtered · logged · 24/7",
       }}
+      gallery={[
+        {
+          src: "/images/triage-canvas.webp",
+          alt: "The n8n workflow canvas: a Gmail trigger feeds each new email to a Gemini LLM chain, a filter node keeps only job-related mail, and a Google Sheets node appends the rest to a log",
+          caption: "The pipeline in n8n: every new email goes from the Gmail trigger through Gemini to the filter and the sheet.",
+          width: 1400,
+          height: 655,
+        },
+        {
+          src: "/images/triage-executions.webp",
+          alt: "The n8n executions list showing nine successful automatic runs; one run's output shows a GitHub notification email correctly stopped at the false branch of the filter",
+          caption: "It runs by itself: every automatic execution is logged, and in the open one a non-job email was stopped by the filter.",
+          width: 1400,
+          height: 655,
+        },
+        {
+          src: "/images/triage-board.webp",
+          alt: "The triage board in Google Sheets: one row per email with timestamp, subject, sender, signal, company, role, next action, and the reasoning in the Why column",
+          caption: "The triage board: one row per email, with the reasoning in plain words in the Why column.",
+          width: 1400,
+          height: 175,
+        },
+      ]}
       learnings={[
         "Asking the AI for strict JSON plus a one-line why makes every verdict auditable: a triage log you can trust beats a magic black box.",
         "The filter after the AI matters as much as the AI. Most mail is not job mail, and the board stays clean because of it.",

@@ -39,6 +39,13 @@ function About() {
         instinct is why I moved into automation; every project on this site
         is a repeated task I made easier or made disappear.
       </p>
+      <p className="mt-3 max-w-3xl">
+        You should also know where I started: zero background in coding or
+        automation. Everything on this site is self-taught since I began the
+        switch, built step by step in the open with AI coding agents. I&rsquo;m
+        not an expert yet; I&rsquo;m the person who ships small working things,
+        documents them, and fixes them when they break.
+      </p>
       <p className="mt-3 max-w-3xl text-muted-foreground">
         Based in Cebu, Philippines. Comfortable working across time zones,
         with a dedicated home office and reliable fiber internet.
