@@ -4,7 +4,7 @@
 Site live in production (https://johnmark-ong-portfolio.netlify.app). 2026-11-19: job email triage v1 live in n8n (self-hosted) AND shipped as a portfolio case study — the planned "Support ticket triage" page was replaced by the real "Job email triage" project and deployed to production the same day. Details and v2 ideas: `docs/email-triage-plan.md`.
 
 ## Next action
-v2 of the n8n triage, in this order: daily digest email, thread dedupe, keyword pre-filter, error alerting, metrics tab. Then the application-funnel dashboard (owner is keen on this one). Later candidates: client-ready Rules tab for the Gmail tracker; custom domain (optional).
+Owner deferred both queued builds (2026-11-20): n8n v2 starting with the daily digest (Schedule Trigger), and the application-funnel dashboard. When the dashboard starts, explain it from scratch: owner is not familiar with funnels yet. Optional small task if wanted: screenshots for the Gmail auto-labeler page (labels sidebar + Applications tab with Auto: notes, sample rows first). Later candidates: client-ready Rules tab for the Gmail tracker; custom domain (optional).
 
 ## Blocked / open questions
 - **CV PDF needs updating** to match the new skills (AI coding agents, portfolio tools) — the PDF is an external artifact; owner to decide: agent drafts new CV content for them to regenerate, or leave as is for now.
