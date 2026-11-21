@@ -111,7 +111,7 @@ function Projects() {
           </p>
           <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
             <iframe
-              src="https://datastudio.google.com/embed/reporting/c0bd2a0f-36db-4ecc-b6f3-f31d31b5b01d/page/VC4DG"
+              src="https://datastudio.google.com/embed/reporting/c0bd2a0f-36db-4ecc-be6f-f31d31b5b01d/page/VC4DG"
               title="Job application funnel dashboard (sample data)"
               loading="lazy"
               className="h-[600px] w-full"
