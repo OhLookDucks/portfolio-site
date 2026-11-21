@@ -17,15 +17,22 @@ export const Route = createFileRoute("/contact")({
 
 function Contact() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-14">
-      <h1 className="text-3xl font-extrabold">Let&rsquo;s talk</h1>
+    <>
+      {/* Dark console band, direction C (2026-11-21) */}
+      <section className="bg-[#1d2b31] text-[#e8eef0]">
+        <div className="mx-auto max-w-5xl px-6 py-16">
+          <h1 className="text-3xl font-extrabold">Let&rsquo;s talk</h1>
+          <p className="mt-2 text-white/70">
+            Looking for a support operations or automation role. Email is the
+            quickest way to reach me.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-12">
       {/* Sand card, like the old contact section */}
-      <div className="mt-6 max-w-3xl rounded-lg border border-border bg-sand p-6">
-        <p>
-          I&rsquo;m looking for a support operations or automation role. Email
-          is the quickest way to reach me.
-        </p>
-        <div className="mt-4 flex flex-wrap gap-3">
+      <div className="max-w-3xl rounded-lg border border-border bg-sand p-6">
+        <div className="flex flex-wrap gap-3">
           <Button
             render={
               <a href="mailto:ongjohnmarkc@gmail.com?subject=Hello%20John%20Mark" />
@@ -54,6 +61,7 @@ function Contact() {
           ongjohnmarkc@gmail.com
         </p>
       </div>
-    </section>
+      </section>
+    </>
   )
 }

@@ -54,38 +54,71 @@ const PROJECTS: {
 
 function Projects() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-14">
-      <h1 className="text-3xl font-extrabold">Projects</h1>
-      <p className="mt-2 text-muted-foreground">
-        Small automations I have built or am planning, mostly to show how I
-        would make a support team&rsquo;s day easier.
-      </p>
-      <div className="mt-8 flex flex-col gap-4">
-        {PROJECTS.map((project) => (
-          <Card key={project.title}>
-            <CardHeader>
-              <h2 className="flex items-center gap-2 text-lg font-bold">
-                {project.detailTo ? (
-                  <Link to={project.detailTo} className="hover:text-primary">
-                    {project.title}
-                  </Link>
-                ) : (
-                  project.title
-                )}
-                {project.tag ? (
-                  <span className="rounded-full bg-peach px-2.5 py-0.5 text-xs font-medium text-[#7a3e12]">
-                    {project.tag}
-                  </span>
-                ) : null}
-              </h2>
-              <p className="text-sm text-muted-foreground">{project.meta}</p>
-            </CardHeader>
-            <CardContent>
-              <p>{project.description}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </section>
+    <>
+      {/* Dark console band, direction C (2026-11-21) */}
+      <section className="bg-[#1d2b31] text-[#e8eef0]">
+        <div className="mx-auto max-w-5xl px-6 py-16">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-white/50">
+            The queue
+          </p>
+          <h1 className="mt-3 text-3xl font-extrabold">Projects</h1>
+          <p className="mt-2 max-w-3xl text-white/70">
+            Small automations I have built or am planning, mostly to show how I
+            would make a support team&rsquo;s day easier.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-12">
+        <div className="flex flex-col gap-4">
+          {PROJECTS.map((project) => (
+            <Card key={project.title}>
+              <CardHeader>
+                <h2 className="flex items-center gap-2 text-lg font-bold">
+                  {project.detailTo ? (
+                    <Link to={project.detailTo} className="hover:text-primary">
+                      {project.title}
+                    </Link>
+                  ) : (
+                    project.title
+                  )}
+                  {project.tag ? (
+                    <span className="rounded-full bg-peach px-2.5 py-0.5 text-xs font-medium text-[#7a3e12]">
+                      {project.tag}
+                    </span>
+                  ) : null}
+                </h2>
+                <p className="text-sm text-muted-foreground">{project.meta}</p>
+              </CardHeader>
+              <CardContent>
+                <p>{project.description}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      {/* The funnel dashboard, embedded. Demo data only (sample rows). */}
+      <section className="bg-[#1d2b31] text-[#e8eef0]">
+        <div className="mx-auto max-w-5xl px-6 py-16">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-white/50">
+            Live from the hunt
+          </p>
+          <h2 className="mt-3 text-2xl font-bold">The application funnel, charted</h2>
+          <p className="mt-2 max-w-3xl text-white/70">
+            A Looker Studio dashboard over my application tracker. This embed
+            runs on sample data; a private copy counts the real hunt.
+          </p>
+          <div className="mt-6 overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+            <iframe
+              src="https://datastudio.google.com/embed/reporting/c0bd2a0f-36db-4ecc-b6f3-f31d31b5b01d/page/VC4DG"
+              title="Job application funnel dashboard (sample data)"
+              loading="lazy"
+              className="h-[600px] w-full"
+            />
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
