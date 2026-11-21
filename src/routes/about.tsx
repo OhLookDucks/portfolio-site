@@ -17,11 +17,19 @@ export const Route = createFileRoute("/about")({
 
 function About() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-14">
-      <span className="inline-block rounded-full bg-secondary px-3 py-1 text-xs font-medium text-secondary-foreground">
-        Open to support operations and automation roles
-      </span>
-      <h1 className="mt-4 text-3xl font-extrabold">About me</h1>
+    <>
+      {/* Dark console band, direction C (2026-11-21) */}
+      <section className="bg-[#1d2b31] text-[#e8eef0]">
+        <div className="mx-auto max-w-5xl px-6 py-16">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/80">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            Open to support operations and automation roles
+          </span>
+          <h1 className="mt-5 text-4xl font-extrabold tracking-tight">About me</h1>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-12">
       {/* Evidence first: accounts, daily volume, one concrete win (site review 2026-11-20) */}
       <p className="mt-4 max-w-3xl">
         I&rsquo;ve spent four years in customer support across telecom and
@@ -64,6 +72,7 @@ function About() {
           Email me
         </Button>
       </div>
-    </section>
+      </section>
+    </>
   )
 }

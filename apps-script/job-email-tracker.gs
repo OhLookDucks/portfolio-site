@@ -32,7 +32,7 @@ const SCAN_WINDOW_DAYS = 3;        // each run only reads mail newer than this m
 const ADD_NEW_ROWS = true;         // add a row when an "application submitted" email has no match
 const GHOST_AFTER_DAYS = 7;        // Applied -> Ghosted this many days after the follow-up date
 const SHEET_NAME = "📋 Applications";
-const FIRST_DATA_ROW = 5;
+const FIRST_DATA_ROW = 5;         // row 4 = headers, data starts row 5
 const START_DATE = "2026/11/01";   // now only used by the check buttons at the bottom
 
 // Column numbers on the sheet (A = 1, B = 2, ...)

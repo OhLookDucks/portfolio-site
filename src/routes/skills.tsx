@@ -44,25 +44,33 @@ const SKILL_GROUPS: { name: string; items: string }[] = [
 
 function Skills() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-14">
-      <h1 className="text-3xl font-extrabold">Skills and tools</h1>
-      <p className="mt-2 text-muted-foreground">
-        What I use day to day in support work, and what I&rsquo;m learning for
-        automation, including building this very site hands-on with an AI
-        coding agent.
-      </p>
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
-        {SKILL_GROUPS.map((group) => (
-          <Card key={group.name}>
-            <CardHeader>
-              <CardTitle>{group.name}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">{group.items}</p>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </section>
+    <>
+      {/* Dark console band, direction C (2026-11-21) */}
+      <section className="bg-[#1d2b31] text-[#e8eef0]">
+        <div className="mx-auto max-w-5xl px-6 py-16">
+          <h1 className="text-3xl font-extrabold">Skills and tools</h1>
+          <p className="mt-2 max-w-3xl text-white/70">
+            What I use day to day in support work, and what I&rsquo;m learning for
+            automation, including building this very site hands-on with an AI
+            coding agent.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-6 py-12">
+        <div className="grid gap-4 sm:grid-cols-2">
+          {SKILL_GROUPS.map((group) => (
+            <Card key={group.name}>
+              <CardHeader>
+                <CardTitle>{group.name}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">{group.items}</p>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </section>
+    </>
   )
 }
