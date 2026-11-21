@@ -17,9 +17,6 @@ import { Route as SkillsRouteImport } from './routes/skills'
 import { Route as ProjectsDownloadsAutoSorterRouteImport } from './routes/projects_.downloads-auto-sorter'
 import { Route as ProjectsGmailAutoLabelerRouteImport } from './routes/projects_.gmail-auto-labeler'
 import { Route as ProjectsJobEmailTriageRouteImport } from './routes/projects_.job-email-triage'
-import { Route as PrototypeUiARouteImport } from './routes/prototype_.ui-a'
-import { Route as PrototypeUiBRouteImport } from './routes/prototype_.ui-b'
-import { Route as PrototypeUiCRouteImport } from './routes/prototype_.ui-c'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -63,21 +60,6 @@ const ProjectsJobEmailTriageRoute = ProjectsJobEmailTriageRouteImport.update({
   path: '/projects/job-email-triage',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PrototypeUiARoute = PrototypeUiARouteImport.update({
-  id: '/prototype_/ui-a',
-  path: '/prototype/ui-a',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrototypeUiBRoute = PrototypeUiBRouteImport.update({
-  id: '/prototype_/ui-b',
-  path: '/prototype/ui-b',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PrototypeUiCRoute = PrototypeUiCRouteImport.update({
-  id: '/prototype_/ui-c',
-  path: '/prototype/ui-c',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -88,9 +70,6 @@ export interface FileRoutesByFullPath {
   '/projects/downloads-auto-sorter': typeof ProjectsDownloadsAutoSorterRoute
   '/projects/gmail-auto-labeler': typeof ProjectsGmailAutoLabelerRoute
   '/projects/job-email-triage': typeof ProjectsJobEmailTriageRoute
-  '/prototype/ui-a': typeof PrototypeUiARoute
-  '/prototype/ui-b': typeof PrototypeUiBRoute
-  '/prototype/ui-c': typeof PrototypeUiCRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -101,9 +80,6 @@ export interface FileRoutesByTo {
   '/projects/downloads-auto-sorter': typeof ProjectsDownloadsAutoSorterRoute
   '/projects/gmail-auto-labeler': typeof ProjectsGmailAutoLabelerRoute
   '/projects/job-email-triage': typeof ProjectsJobEmailTriageRoute
-  '/prototype/ui-a': typeof PrototypeUiARoute
-  '/prototype/ui-b': typeof PrototypeUiBRoute
-  '/prototype/ui-c': typeof PrototypeUiCRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -115,9 +91,6 @@ export interface FileRoutesById {
   '/projects_/downloads-auto-sorter': typeof ProjectsDownloadsAutoSorterRoute
   '/projects_/gmail-auto-labeler': typeof ProjectsGmailAutoLabelerRoute
   '/projects_/job-email-triage': typeof ProjectsJobEmailTriageRoute
-  '/prototype_/ui-a': typeof PrototypeUiARoute
-  '/prototype_/ui-b': typeof PrototypeUiBRoute
-  '/prototype_/ui-c': typeof PrototypeUiCRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -130,9 +103,6 @@ export interface FileRouteTypes {
     | '/projects/downloads-auto-sorter'
     | '/projects/gmail-auto-labeler'
     | '/projects/job-email-triage'
-    | '/prototype/ui-a'
-    | '/prototype/ui-b'
-    | '/prototype/ui-c'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -143,9 +113,6 @@ export interface FileRouteTypes {
     | '/projects/downloads-auto-sorter'
     | '/projects/gmail-auto-labeler'
     | '/projects/job-email-triage'
-    | '/prototype/ui-a'
-    | '/prototype/ui-b'
-    | '/prototype/ui-c'
   id:
     | '__root__'
     | '/'
@@ -156,9 +123,6 @@ export interface FileRouteTypes {
     | '/projects_/downloads-auto-sorter'
     | '/projects_/gmail-auto-labeler'
     | '/projects_/job-email-triage'
-    | '/prototype_/ui-a'
-    | '/prototype_/ui-b'
-    | '/prototype_/ui-c'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -170,9 +134,6 @@ export interface RootRouteChildren {
   ProjectsDownloadsAutoSorterRoute: typeof ProjectsDownloadsAutoSorterRoute
   ProjectsGmailAutoLabelerRoute: typeof ProjectsGmailAutoLabelerRoute
   ProjectsJobEmailTriageRoute: typeof ProjectsJobEmailTriageRoute
-  PrototypeUiARoute: typeof PrototypeUiARoute
-  PrototypeUiBRoute: typeof PrototypeUiBRoute
-  PrototypeUiCRoute: typeof PrototypeUiCRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -233,27 +194,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsJobEmailTriageRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/prototype_/ui-a': {
-      id: '/prototype_/ui-a'
-      path: '/prototype/ui-a'
-      fullPath: '/prototype/ui-a'
-      preLoaderRoute: typeof PrototypeUiARouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/prototype_/ui-b': {
-      id: '/prototype_/ui-b'
-      path: '/prototype/ui-b'
-      fullPath: '/prototype/ui-b'
-      preLoaderRoute: typeof PrototypeUiBRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/prototype_/ui-c': {
-      id: '/prototype_/ui-c'
-      path: '/prototype/ui-c'
-      fullPath: '/prototype/ui-c'
-      preLoaderRoute: typeof PrototypeUiCRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
@@ -266,9 +206,6 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsDownloadsAutoSorterRoute: ProjectsDownloadsAutoSorterRoute,
   ProjectsGmailAutoLabelerRoute: ProjectsGmailAutoLabelerRoute,
   ProjectsJobEmailTriageRoute: ProjectsJobEmailTriageRoute,
-  PrototypeUiARoute: PrototypeUiARoute,
-  PrototypeUiBRoute: PrototypeUiBRoute,
-  PrototypeUiCRoute: PrototypeUiCRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
