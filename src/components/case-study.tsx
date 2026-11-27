@@ -41,6 +41,14 @@ export interface CaseStudyProps {
     height: number
   }[]
   galleryTitle?: string
+  // Optional story sections between the screenshots and the learnings,
+  // e.g. a "when it broke" production story.
+  extraSections?: {
+    title: string
+    body?: string
+    items?: string[]
+    closing?: string
+  }[]
   learnings: string[]
   learningsTitle?: string
   emailSubject: string
@@ -57,6 +65,7 @@ export function CaseStudy({
   terminal,
   gallery,
   galleryTitle = "What it looks like",
+  extraSections,
   learnings,
   learningsTitle = "What I learned",
   emailSubject,
@@ -118,6 +127,21 @@ export function CaseStudy({
           </div>
         </>
       ) : null}
+
+      {extraSections?.map((section) => (
+        <section key={section.title}>
+          <h2 className="mt-8 text-xl font-bold">{section.title}</h2>
+          {section.body ? <p className="mt-2">{withCode(section.body)}</p> : null}
+          {section.items && section.items.length > 0 ? (
+            <ul className="mt-2 list-disc space-y-2 pl-5">
+              {section.items.map((item) => (
+                <li key={item}>{withCode(item)}</li>
+              ))}
+            </ul>
+          ) : null}
+          {section.closing ? <p className="mt-3">{withCode(section.closing)}</p> : null}
+        </section>
+      ))}
 
       <h2 className="mt-8 text-xl font-bold">{learningsTitle}</h2>
       <ul className="mt-2 list-disc space-y-2 pl-5">
