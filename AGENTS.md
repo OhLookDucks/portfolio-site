@@ -90,6 +90,8 @@ Exact script names come from `package.json`. Check it before running anything an
 - `docs/setup-wsl.md`: one-time environment setup (for me, the human)
 - `docs/netlify.md`: how deployment works
 - `docs/task-template.md`: how I phrase tasks
+- `docs/n8n-curriculum.md`: the owner's n8n study plan and quiz protocol (the agent acts as examiner)
+- `docs/support-desk-simulator-plan.md`: the next big n8n build, parked while the owner studies
 - `docs/adr/`: decisions and why
 - `docs/agents/`: how engineering skills find issues, labels, and domain docs
 
