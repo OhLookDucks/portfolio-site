@@ -10,7 +10,7 @@ export const Route = createFileRoute("/projects_/job-email-triage")({
       {
         name: "description",
         content:
-          "An AI agent in n8n classifies every incoming job email the moment it arrives: signal, company, role and next action land in a triage board, and non-job mail never reaches it. Runs around the clock.",
+          "An AI agent in n8n classifies every incoming job email the moment it arrives: signal, company, role and next action land in a triage board, and non-job mail never reaches it. Hardened after a real outage with retries, rate-limited alerting and a keyword pre-filter.",
       },
     ],
   }),
@@ -44,13 +44,27 @@ function JobEmailTriagePage() {
           {
             prompt: "$ the pipeline",
             lines: [
-              { text: "Gmail trigger → Gemini → filter → triage board" },
+              { text: "Gmail trigger → keyword gate → Gemini → filter → triage board" },
               { text: "not job-related? → stops there, log stays clean" },
+              { text: "any failure → one alert per workflow, per hour" },
             ],
           },
         ],
         footer: "# classified · filtered · logged · 24/7",
       }}
+      extraSections={[
+        {
+          title: "When it broke",
+          body: "A week in, my own safety net caught a real failure and then taught me a bigger one. Gemini's free quota ran out, every failed run left its emails unprocessed, and the Gmail trigger re-fetched the same mail every minute. My error alerting did exactly what I designed it to do: it emailed me on every failure, once per minute. The alerting worked. The design was wrong.",
+          items: [
+            "`Retry On Fail` on the LLM node: most quota errors are momentary, so three spaced-out retries now rescue runs that used to die instantly.",
+            "Rate-limited alerting: a small `Code` node keeps one timestamp per workflow in n8n's workflow memory and allows at most one failure email per workflow per hour. My first version had no limiter and flooded me during exactly the outage it was built for.",
+            "A keyword gate before the AI: an `IF` node checks the subject and sender against a short allowlist, so newsletters and notifications never reach `Gemini`. Cheap gate first, expensive judge second.",
+            "Ops hygiene: Google's test-mode sign-ins expire weekly, so the OAuth app now runs in production mode and the weekly credential breakage is gone.",
+          ],
+          closing: "The pipeline is the same shape as day one. What changed is everything around it: retries, quiet alerts, and a gate that protects the quota. Building the system taught me the pipeline; operating it taught me the rest.",
+        },
+      ]}
       gallery={[
         {
           src: "/images/triage-canvas.webp",
@@ -78,6 +92,7 @@ function JobEmailTriagePage() {
         "Asking the AI for strict JSON plus a one-line why makes every verdict auditable: a triage log you can trust beats a magic black box.",
         "The filter after the AI matters as much as the AI. Most mail is not job mail, and the board stays clean because of it.",
         "Node-by-node testing in n8n, executing one step and inspecting its output, turned debugging into checking doors one by one instead of guessing.",
+        "Alerts are a product too. An alert that fires sixty times an hour trains you to ignore it, so rate limiting is part of alerting, not a nice-to-have.",
       ]}
       learningsTitle="What I learned"
       emailSubject="Tell me about your job email triage agent"
